@@ -1,8 +1,8 @@
+import { BrowserRouter, Link } from 'react-router-dom';
 import { Col, Container, Row } from '../components/Grid';
 import React, { useEffect, useState } from 'react';
 import API from '../utils/API';
 import Jumbotron from '../components/Jumbotron';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Detail(props) {
@@ -38,7 +38,9 @@ function Detail(props) {
             </Row>
             <Row>
                 <Col size="md-2">
-                    <Link to="/">← Back to Authors</Link>
+                    <BrowserRouter>
+                        <Link to="/">← Back to Authors</Link>
+                    </BrowserRouter>
                 </Col>
             </Row>
         </Container>

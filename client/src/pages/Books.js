@@ -1,3 +1,4 @@
+import { BrowserRouter, Link } from 'react-router-dom';
 import { Col, Container, Row } from '../components/Grid';
 import { FormBtn, Input, TextArea } from '../components/Form';
 import { List, ListItem } from '../components/List';
@@ -5,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import API from '../utils/API';
 import DeleteBtn from '../components/DeleteBtn';
 import Jumbotron from '../components/Jumbotron';
-import { Link } from 'react-router-dom';
 
 function Books() {
     const [books, setBooks] = useState([]);
@@ -84,11 +84,13 @@ function Books() {
                         <List>
                             {books.map(book =>
                                 <ListItem key={book._id}>
-                                    <Link to={`/books/${ book._id}`}>
-                                        <strong>
-                                            {book.title} by {book.author}
-                                        </strong>
-                                    </Link>
+                                    <BrowserRouter>
+                                        <Link to={`/books/${ book._id}`}>
+                                            <strong>
+                                                {book.title} by {book.author}
+                                            </strong>
+                                        </Link>
+                                    </BrowserRouter>
                                     <DeleteBtn onClick={() => deleteBook(book._id)} />
                                 </ListItem>
                             )}

@@ -24,4 +24,4 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/reactreadinglis
 });
 
 // Start the API server
-app.listen(PORT, () => console.log(`API Server up on http://localhost${PORT}`));
+app.listen(PORT, () => console.log(`API Server up on http://localhost:${PORT}`));
