@@ -1,4 +1,5 @@
 import './style.css';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 // This file exports both the List and ListItem components
